@@ -24,6 +24,7 @@ const backgrounds = {
   Thunderstorm: { colors: "from-gray-800 to-purple-900", icon: "⛈️" },
   Snow: { colors: "from-blue-100 to-slate-400", icon: "❄️" },
 };
+//Testing github actions
 
 async function showWeather() {
   const city = cityInput.value;
