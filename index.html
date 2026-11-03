@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="page" class="min-h-screen bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center p-4">
+
+  <!-- Big weather picture behind the card -->
+  <div id="bgIcon" class="fixed top-8 right-8 text-[12rem] opacity-40 pointer-events-none"></div>
+
+  <!-- Clear glass card: almost no tint, very light blur and no border.
+       Stacked shadows make it look 3D: a light top edge and dark bottom edge inside,
+       plus a close, a medium and a far shadow outside so it seems to float. -->
+  <div class="relative overflow-hidden w-full max-w-2xl p-10 text-white rounded-3xl
+    bg-white/5 backdrop-blur-[2px]
+    shadow-[inset_0_2px_2px_rgba(255,255,255,0.5),inset_0_-4px_8px_rgba(0,0,0,0.15),0_4px_6px_rgba(0,0,0,0.15),0_15px_30px_rgba(0,0,0,0.25),0_40px_80px_rgba(0,0,0,0.35)]
+    transition-transform duration-300 hover:-translate-y-2 hover:scale-105">
+
+    <!-- Shine across the top of the glass, like light on a lens -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white/10 blur-3xl pointer-events-none"></div>
+
+    <h1 class="relative text-4xl font-bold text-center mb-6">Weather App</h1>
+
+    <div class="relative flex gap-3 mb-8">
+      <input id="cityInput" type="text" placeholder="Enter a city" value="Stockton,CA,US"
+        class="flex-1 rounded-xl px-4 py-3 text-lg text-gray-800 outline-none" />
+      <button id="searchBtn" class="bg-white text-blue-700 text-lg font-semibold rounded-xl px-6 py-3 hover:bg-gray-100">
+        Search
+      </button>
+    </div>
+
+    <div class="relative text-center">
+      <h2 id="cityName" class="text-3xl font-semibold"></h2>
+      <img id="icon" class="mx-auto w-40 h-40" />
+      <p id="temp" class="text-8xl font-bold"></p>
+      <p id="description" class="text-2xl capitalize mb-4"></p>
+      <p id="humidity" class="text-lg"></p>
+      <p id="wind" class="text-lg"></p>
+      <button id="favoriteBtn" class="mt-4 bg-white/20 hover:bg-white/30 rounded-xl px-5 py-2 font-semibold">
+        ⭐ Add to Favorites
+      </button>
+    </div>
+
+    <div id="forecast" class="relative grid grid-cols-5 gap-3 mt-8"></div>
+
+    <h3 class="relative text-xl font-semibold mt-8 mb-3">Favorites</h3>
+    <div id="favoritesList" class="relative flex flex-wrap gap-2"></div>
+  </div>
+
+  <script type="module" src="/scripts.js"></script>
+</body>
+</html>
