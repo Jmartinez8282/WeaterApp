@@ -1,5 +1,5 @@
 // Get a free API key at https://openweathermap.org/api
-const API_KEY = "ec23c5103acb5f05c0e4cd9916dd112c";
+const API_KEY = "cec23c5103acb5f05c0e4cd9916dd112cc";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 // Get the current weather for a city
